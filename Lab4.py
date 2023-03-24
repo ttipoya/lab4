@@ -113,9 +113,9 @@ if n >= 6:
         sizes = [round(np.mean(abs(F[i, ::])) * 100 / grap1, 1) for i in range(n)]
         grap2[1, 0].set_title("График с ипользованием функции pie:")
         grap2[1, 0].pie(sizes, labels=list(range(1, n + 1)), explode=exp, autopct='%1.1f%%', shadow=True)
-        def map(data, row_labels, col_labels, grap3, cbar_kw={}, **kwargs):
+        def map(data, row_labels, col_labels, grap3, bar_gh={}, **kwargs):
             da = grap3.imshow(data, **kwargs)
-            bar = grap3.figure.colorbar(da, ax=grap3, **cbar_kw)
+            bar = grap3.figure.colorbar(da, ax=grap3, **bar_gh)
             grap3.set_xticks(np.arange(data.shape[1]), labels=col_labels)
             grap3.set_yticks(np.arange(data.shape[0]), labels=row_labels)
             return da, bar
